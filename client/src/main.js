@@ -3,6 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import api from './api'
+
+Object.defineProperties(Vue.prototype, {
+  '$api': {
+    value: api
+  }
+})
 
 Vue.config.productionTip = false
 
