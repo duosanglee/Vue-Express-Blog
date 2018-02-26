@@ -32,7 +32,10 @@ import Home from '@/views/Home'
 export const routes = [
   {
     path: '/',
-    redirect: '/home',
+    redirect: {name: 'home'}
+  },
+  {
+    path: '/home',
     name: 'home',
     component: Home,
     meta: {
