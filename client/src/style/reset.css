@@ -25,6 +25,7 @@ time, mark, audio, video {
 	box-sizing: border-box;
 	color: #222;
 	font-weight: 300;
+	letter-spacing: 0.2px;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
