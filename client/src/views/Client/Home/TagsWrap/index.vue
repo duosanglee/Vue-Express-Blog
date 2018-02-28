@@ -9,13 +9,15 @@
 <script>
 import { mapGetters, mapMutations } from 'vuex'
 export default {
-  props: {
-    tagsArr: {
-      type: Array
-    }
-  },
+  props: [],
   data () {
     return {
+      tagsArr: [
+        {
+          id: -1,
+          name: '全部'
+        }
+      ]
     }
   },
   computed: {
@@ -28,11 +30,9 @@ export default {
   components: {},
   mounted () {},
   created () {
-    // let tagId = this.$route.query.tagId || -1
-
-    // this.$api.tagsList().then(({code, data}) => {
-    //   this.tagsArr = [...this.tagsArr, ...data]
-    // })
+    this.$api.tagsList().then(({code, data}) => {
+      this.tagsArr = [...this.tagsArr, ...data]
+    })
   }
 }
 </script>

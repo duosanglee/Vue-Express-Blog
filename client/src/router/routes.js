@@ -28,6 +28,7 @@
 // export default
 import AboutMe from '@/views/Client/AboutMe'
 import Home from '@/views/Client/Home'
+import ArticlesDetail from '@/views/Client/ArticlesDetail'
 
 export const routes = [
   {
@@ -48,6 +49,14 @@ export const routes = [
     name: 'aboutMe',
     meta: {
       title: '关于我'
+    }
+  },
+  {
+    path: '/articles/:id',
+    component: ArticlesDetail,
+    name: 'articlesDetail',
+    meta: {
+      title: ''
     }
   }
 ]

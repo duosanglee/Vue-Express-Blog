@@ -6,7 +6,7 @@
       </div>
       <div class="title">{{article.title}}</div>
       <div class="time">{{article.time}}</div>
-      <div class="content" @click="readMore()">{{article.content}}</div>
+      <div class="content" @click="readMore(article.id)">{{article.content}}</div>
       <div class="info-bar">
         <div class="viewCount">阅读数
           <span class="num">{{article.viewCount}}</span>
@@ -32,12 +32,26 @@ export default {
   methods: {
     ...mapMutations('HomeModule', ['clickTag']),
     fetchArticlesList (tagId) {
+      this.articlesArr = null
       this.$api.articlesList({tagId}).then(({code, data}) => {
         this.articlesArr = data
       })
+    },
+    readMore (articlesId) {
+      this.$router.push({
+        name: 'articlesDetail',
+        params: {
+          id: articlesId
+        }
+      })
+      this.$api.articlesDetail({articlesId})
     }
   },
-  watch: {},
+  watch: {
+    activeTag (tagId) {
+      this.fetchArticlesList(tagId)
+    }
+  },
   components: {},
   mounted () {},
   created () {

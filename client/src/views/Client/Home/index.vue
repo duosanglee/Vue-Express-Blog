@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="tags-avatar">
-      <tags-wrap :tagsArr="tagsArr"></tags-wrap>
+      <tags-wrap></tags-wrap>
       <img src="../../../assets/avatar.jpeg" alt="" class="avatar">
     </div>
     <articles-wrap></articles-wrap>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 import router from '@/router'
 import TagsWrap from './TagsWrap'
 import ArticlesWrap from './ArticlesWrap'
@@ -33,21 +33,13 @@ let HomeModule = {
       })
     }
   },
-  actions: {
-
-  }
+  actions: {}
 }
 
 export default {
   props: [],
   data () {
     return {
-      tagsArr: [
-        {
-          id: -1,
-          name: '全部'
-        }
-      ]
     }
   },
   components: {
@@ -55,7 +47,6 @@ export default {
     ArticlesWrap
   },
   computed: {
-    ...mapGetters('HomeModule', ['activeTag'])
   },
   methods: {
   },
@@ -63,10 +54,6 @@ export default {
   mounted () {},
   created () {
     this.$store.registerModule('HomeModule', HomeModule)
-
-    this.$api.tagsList().then(({code, data}) => {
-      this.tagsArr = [...this.tagsArr, ...data]
-    })
   },
   destroyed () {
     // 销毁动态store
@@ -78,6 +65,7 @@ export default {
 <style lang='scss' scoped>
 .main {
   margin: 0 auto;
+  padding-top: 60px;
   width: 700px;
   .tags-avatar {
     position: relative;
