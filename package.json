@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/duosanglee/Vue-Express-Blog/issues"
   },
-  "homepage": "https://github.com/duosanglee/Vue-Express-Blog#readme"
+  "homepage": "https://github.com/duosanglee/Vue-Express-Blog#readme",
+  "dependencies": {
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^5.0.0"
+  }
 }
