@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import api from './api'
+import './icons' // icon
 import { sync } from 'vuex-router-sync'
 
 sync(store, router) // done. Returns an unsync callback fn
