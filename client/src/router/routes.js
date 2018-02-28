@@ -26,8 +26,8 @@
 // })
 
 // export default
-import AboutMe from '@/views/AboutMe'
-import Home from '@/views/Home'
+import AboutMe from '@/views/Client/AboutMe'
+import Home from '@/views/Client/Home'
 
 export const routes = [
   {
